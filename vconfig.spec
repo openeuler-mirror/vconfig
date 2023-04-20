@@ -1,6 +1,6 @@
 Name:       	vconfig
 Version:    	1.9
-Release:    	26
+Release:    	27
 Summary:    	802.1Q VLAN implementation for Linux
 License:    	GPLv2+
 
@@ -8,6 +8,7 @@ URL:        	https://www.candelatech.com/~greear/vlan.html
 Source0:     	https://www.candelatech.com/~greear/vlan/vlan.%{version}.tar.gz
 
 Patch0:     	%{name}-1.9-Pass-compilation-with-Werror-format-security.patch
+Patch1:         vconfig-fix-cc.patch
 BuildRequires:  coreutils gcc make
 
 %description 
@@ -39,5 +40,8 @@ install -D -m644 %{name}.8 %{buildroot}%{_mandir}/man8/%{name}.8
 %{_mandir}/man8/%{name}.8.gz
 
 %changelog
+* Wed Apr 19 2023 Xiaoya Huang <huangxiaoya@iscas.ac.cn> - 1.9-27
+- Fix CC compiler support
+
 * Fri Oct 11 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.9-26
 - Package init
