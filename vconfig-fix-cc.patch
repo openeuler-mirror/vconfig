@@ -1,0 +1,11 @@
+--- a/MakeInclude	2003-08-26 01:08:18.000000000 +0800
++++ b/MakeInclude	2023-04-19 16:40:58.913183520 +0800
+@@ -30,6 +30,6 @@
+ else
+    #echo "Building for x86 platform."
+    STRIP=strip
+-   CC = gcc       # this is generally the c compiler, unused AFAIK
+-   CCC = g++      # this is generally the c++ compiler
++   CC ?= gcc       # this is generally the c compiler, unused AFAIK
++   CCC ?= g++      # this is generally the c++ compiler
+ endif
